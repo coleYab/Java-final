@@ -78,5 +78,10 @@ public class Course {
 
     public List<Assignment> getAssignments() {
         return assignments;
+    }
+
+    public void addNewAssignment(Assignment assignment) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addNewAssignment'");
     }    
 }

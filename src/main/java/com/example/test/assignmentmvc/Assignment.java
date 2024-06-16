@@ -63,4 +63,9 @@ public class Assignment {
     public List<Task> getTasks() {
         return tasks;
     }
+
+    public void addNewTask(Task task) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addNewTask'");
+    }
 }

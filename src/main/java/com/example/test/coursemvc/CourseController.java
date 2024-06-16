@@ -12,14 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.test.assignmentmvc.AssignmentRepository;
+
 @RestController
 @RequestMapping("/api/v1/course")
 public class CourseController {
     @Autowired
     private final CourseRepository courseRepository;
+    @Autowired
+    private final AssignmentRepository assignmentRepository;
 
-    public CourseController(CourseRepository courseRepository) {
+    public CourseController(CourseRepository courseRepository, AssignmentRepository assignmentRepository) {
         this.courseRepository = courseRepository;
+        this.assignmentRepository = assignmentRepository;
     }
 
     @GetMapping("")
@@ -30,6 +35,13 @@ public class CourseController {
     @PostMapping("")
     public void create(@RequestBody Course course) {
         courseRepository.save(course);
+    }
+
+    @PostMapping("/{id}/assignment/{a_id}")
+    public void addAssignment(@RequestParam Long id, @RequestParam Long a_id) {
+        courseRepository.findById(id).get().addNewAssignment(
+            assignmentRepository.findById(a_id).get()
+        );
     }
 
     @PutMapping("/{id}")
