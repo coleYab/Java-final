@@ -16,7 +16,6 @@ import java.util.ArrayList;
     the course that they are enrolled to and the table will be displyed from a course list,
     in the table we need to show curse code, course name, course status and button to the the course detial 
  */
-@Component
 public class MainApp extends JFrame {
     public MainApp() {
         // Create the main frame
