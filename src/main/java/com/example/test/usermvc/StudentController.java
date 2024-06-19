@@ -44,6 +44,12 @@ public class StudentController {
         );
     }
 
+    @GetMapping("/{id}")
+    public Student getStudent(@RequestParam Long user_name) {
+        // return studentRepository.findById(id).get();
+        return new Student("Yeabisra Moges", "yabu1009", "sdfhsdf");
+    }
+
     @PutMapping("/{id}")
     public void update(@RequestBody Student student, @RequestParam Long id) {
         studentRepository.save(student);

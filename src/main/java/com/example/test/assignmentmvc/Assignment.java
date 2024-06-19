@@ -65,7 +65,14 @@ public class Assignment {
     }
 
     public void addNewTask(Task task) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addNewTask'");
+        if (!this.tasks.contains(task)) {
+            this.tasks.add(task);
+        }
+    }
+
+    public void removeTask(Task task) {
+        if (this.tasks.contains(task)) {
+            this.tasks.remove(task);
+        }
     }
 }
